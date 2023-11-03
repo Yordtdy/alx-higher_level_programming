@@ -1,12 +1,17 @@
 #!/usr/bin/python3
-from add_0 import add
+# -----------------------------------------------------------
+# Python program that:
+# demonstrates how to import a function def add(a, b): from the
+# file add_0.py and print the result of the addition 1 + 2 = 3
+# email jordantarsh@gmail.com
+# -----------------------------------------------------------
 
+# Import the add function
+from task import add
 
-def sum():
-    a = 1
-    b = 2
+a = 1
+b = 2
 
-  print("{:d} + {:d} = {:d}". format(a, b, add(a, b)))
-
+# This code should not run when this file is imported
 if __name__ == "__main__":
-    sum()
+    print("{:d} + {:d} = {:d}". format(a, b, add(a, b)))
