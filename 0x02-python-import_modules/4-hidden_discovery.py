@@ -1,12 +1,12 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.4
+import hidden_4
 
 
-def infinite(args):
-    sum = 0
-    for a in args[1:]:
-        sum += int(a)
-    print(sum)
+def print_hidden():
+    hidden = dir(hidden_4)
+    for i in hidden:
+        if(i[:2] != "__"):
+            print(i)
 
 if __name__ == "__main__":
-    import sys
-    infinite(sys.argv)
+    print_hidden()
