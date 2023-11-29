@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-Rectangle = __import__('0-rectangle').Rectangle
+""" empty class Rectangle that defines a rectangle
+"""
 
-my_rectangle = Rectangle()
-print(type(my_rectangle))
-print(my_rectangle.__dict__)
+
+class Rectangle:
+    """ class rectangle"""
+    pass
