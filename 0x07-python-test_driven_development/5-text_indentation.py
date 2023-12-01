@@ -1,29 +1,68 @@
-#!/usr/bin/python3
-"""Defines a text-indentation function."""
+# The ``5-text_indentation`` module
+============================================
+How to use 5-text_indentation.py
+============================================
 
+This library has one function called ``text_indentation()``
 
-def text_indentation(text):
-    """Print text with two new lines after each '.', '?', and ':'.
+``text_indentation()`` prints a text with 2 new lines after each of these
+characters: ., ? and :
 
-    Args:
-        text (string): The text to print.
-    Raises:
-        TypeError: If text is not a string.
-    """
-    if not isinstance(text, str):
-        raise TypeError("text must be a string")
+Importing the function matrix_divided.
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-    c = 0
-    while c < len(text) and text[c] == ' ':
-        c += 1
+Passing the given text.
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
 
-    while c < len(text):
-        print(text[c], end="")
-        if text[c] == "\n" or text[c] in ".?:":
-            if text[c] in ".?:":
-                print("\n")
-            c += 1
-            while c < len(text) and text[c] == ' ':
-                c += 1
-            continue
-        c += 1
+Passing an empty string as text.
+    >>> text_indentation("")
+
+Passing a text with space at the beginning.
+    >>> text_indentation("        Hello Bezawit")
+    Hello Breezy
+
+Printing a word with spaces around it.
+    >>> text_indentation("    Villegas    ")
+    Villegas
+
+Printing a word with a special character at the end.
+    >>> text_indentation("    Hello    .")
+    Hello.
+    <BLANKLINE>
+
+Passing a text with space between words and a special character at end.
+    >>> text_indentation("What is up my pet?    how are you?")
+    What is up my pet?
+    <BLANKLINE>
+    how are you?
+    <BLANKLINE>
+
+Passing a non-string as text.
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing None as text:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing no arguments to text_indentation.
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Passing more than one argument to text_indentation.
+    >>> text_indentation("Hola", "Commo Estas") #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but ...
