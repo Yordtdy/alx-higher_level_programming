@@ -1,1 +1,1 @@
-first java script project
+readme file for java script
